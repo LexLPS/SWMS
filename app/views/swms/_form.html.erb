@@ -1,0 +1,17 @@
+<%= form_with(model: swm, local: true) do |form| %>
+  <% if swm.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(swm.errors.count, "error") %> prohibited this swm from being saved:</h2>
+
+      <ul>
+      <% swm.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
